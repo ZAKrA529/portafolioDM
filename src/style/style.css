@@ -1,0 +1,247 @@
+/* Paleta de colores */
+:root {
+    /* Colores base */
+    --color-oscuro: #1D252D;
+    --color-oscuro-suave: #28323D;
+    --color-azul-claro: #A6C6D1;
+    --color-azul-claro-pastel: #CFE3EB;
+    --color-azul-medio: #5397B0;
+    --color-azul-medio-suave: #71AFC3;
+    --color-azul-profundo: #2D6C81;
+    --color-azul-profundo-oscuro: #204D5F;
+    --color-blanco: #FFFFFF;
+    --color-gris: #6C6C6C;
+    --color-gris-claro: #A0A0A0;
+    --color-gris-medio: #878787;
+    --color-gris-oscuro: #4E4E4E;
+
+    /* Variaciones de azul */
+    --color-azul-pastel: #D4E9F2;
+    --color-azul-electrico: #008CFF;
+    --color-azul-marino: #1B3A57;
+    --color-azul-verde: #3A9CA4;
+    --color-azul-turquesa: #40E0D0;
+
+    /* Colores complementarios */
+    --color-naranja: #E07A5F;
+    --color-naranja-suave: #F4A896;
+    --color-rojo: #D72638;
+    --color-rojo-oscuro: #A51D2B;
+    --color-verde: #6A994E;
+    --color-verde-suave: #A9D69B;
+    --color-verde-oscuro: #3E6633;
+    --color-amarillo: #F2C14E;
+    --color-amarillo-suave: #F9E79B;
+
+    /* Sombras y acentos */
+    --sombra-suave: rgba(0, 0, 0, 0.1);
+    --sombra-media: rgba(0, 0, 0, 0.3);
+    --sombra-intensa: rgba(0, 0, 0, 0.5);
+
+    /* Gradientes */
+    --gradiente-azul: linear-gradient(135deg, #5397B0 0%, #2D6C81 100%);
+    --gradiente-celeste: linear-gradient(135deg, #A6C6D1 0%, #40E0D0 100%);
+    --gradiente-naranja: linear-gradient(135deg, #E07A5F 0%, #F2C14E 100%);
+}
+
+
+/* Importación de la fuente */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: margin-left 0.5s;
+    background: var(--gradiente-naranja);
+}
+
+
+/* From Uiverse.io by SelfMadeSystem */
+.outline {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.rect {
+    stroke-dashoffset: 5;
+    stroke-dasharray: 0 0 10 40 10 40;
+    transition: 0.5s;
+    stroke: #fff;
+}
+
+.nav {
+    position: relative;
+    width: 400px;
+    height: 60px;
+}
+
+.container:hover .outline .rect {
+    transition: 999999s;
+    /* Must specify these values here as something *different* just so that the transition works properly */
+    stroke-dashoffset: 1;
+    stroke-dasharray: 0;
+}
+
+.container {
+    position: absolute;
+    inset: 0;
+    background: var(--color-amarillo-suave);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5em;
+}
+
+.btn {
+    padding: 0.5em 1.5em;
+    color: var(--gradiente-azul);
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.btn:hover {
+    background: #fff3;
+}
+
+.btn:nth-child(1):hover~svg .rect {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 0 2 8 73.3 8 10.7;
+}
+
+.btn:nth-child(2):hover~svg .rect {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 0 12.6 9.5 49.3 9.5 31.6;
+}
+
+.btn:nth-child(3):hover~svg .rect {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 0 24.5 8.5 27.5 8.5 55.5;
+}
+
+.btn:nth-child(4):hover~svg .rect {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 0 34.7 6.9 10.2 6.9 76;
+}
+
+.btn:hover~.outline .rect {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 0 0 10 40 10 40;
+    transition: 0.5s !important;
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--color-azul-marino);
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--color-azul-medio);
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: var(--color-azul-claro-pastel);
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+
+
+
+/* From Uiverse.io by JaydipPrajapati1910 */
+.card {
+    width: 190px;
+    height: 254px;
+    margin: 0 auto;
+    background: linear-gradient(0deg, #000, #272727);
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.tools {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+}
+
+.circle {
+    padding: 0 4px;
+}
+
+.box {
+    display: inline-block;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: #ff605c;
+}
+
+.yellow {
+    background-color: #ffbd44;
+}
+
+.green {
+    background-color: #00ca4e;
+}
+
+.calzon{
+    display: flex;
+    
+    justify-content: space-between;
+    gap: 50px;
+}

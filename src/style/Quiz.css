@@ -1,0 +1,93 @@
+/*cuerpo del html*/
+body { 
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/*Contenedor del CV*/
+.cv-contenedor {
+    display: flex;
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Lado izquierdo */
+.cv-izquierdo {
+    width: 35%;
+    background: hsl(0, 0%, 69%);
+    color: rgb(22, 2, 2);
+    padding: 20px;
+    text-align: center;
+}
+
+/*MI foto en el cv y sus ajustes(me costó ajustar esta cosa)*/
+.miFoto img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/*Configuracion del CSS de las secciones de cada cachito de informacion*/
+.section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: right;
+}
+
+/*Las secciones con el atributo de editar los h3*/
+.section h3 {
+    background: hsl(165, 40%, 90%);
+    padding: 10px;
+    margin: 0;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+/*La configuracion sigue siendo la de los "section", pero con los atributos de editar los p y los ul*/
+.section p, .section ul {
+    padding: 10px;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #555;
+}
+
+/* Lado derecho */
+.cv-derecho {
+    width: 65%;
+    padding: 20px;
+}
+
+
+
+h3.position {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+
+.job{
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: right;
+}
